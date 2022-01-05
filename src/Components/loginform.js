@@ -16,7 +16,6 @@ function LoginForm() {
       ...state,
       [e.target.name]: e.target.value,
     });
-    // password validation
     if (e.target.name === "password") {
       let password = e.target.value;
       if (password.length < 9) {
@@ -26,7 +25,7 @@ function LoginForm() {
         });
       }
 
-      else if (password === "") {
+      else if (password.length===0) {
         setError({
           ...error,
           password: "Empty Field , Please fill this field ",
@@ -55,7 +54,7 @@ function LoginForm() {
         });
       }
 
-      else if (email === "") {
+      else if (email.length=== 0) {
         setError({
           ...error,
           email: "Empty Field , Please fill this field ",
